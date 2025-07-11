@@ -1,0 +1,42 @@
+name: Weekly Palette Sync
+
+on:
+  schedule:
+    # Runs at 00:00 every Monday
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  sync-palette:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write # Required for creating labels
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run sync script
+        run: |
+          node .github/scripts/sync.js hex
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'chore: sync palette with upstream'
+          title: 'chore: sync palette with upstream'
+          body: |
+            Automated PR to sync palette with upstream [catppuccin/palette][1] repository
+            
+            [1]: https://github.com/catppuccin/palette/blob/main/palette.json
+          branch: chore/sync-palette
+          delete-branch: true
+          labels: |
+            automated pr
+            palette sync

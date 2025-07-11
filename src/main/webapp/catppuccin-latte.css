@@ -1,0 +1,137 @@
+[data-theme=catppuccin-latte], .app-theme-picker__picker[data-theme=catppuccin-latte] {
+  --catppuccin-rosewater: #dc8a78;
+  --catppuccin-flamingo: #dd7878;
+  --catppuccin-pink: #ea76cb;
+  --catppuccin-mauve: #8839ef;
+  --catppuccin-red: #d20f39;
+  --catppuccin-maroon: #e64553;
+  --catppuccin-peach: #fe640b;
+  --catppuccin-yellow: #df8e1d;
+  --catppuccin-green: #40a02b;
+  --catppuccin-teal: #179299;
+  --catppuccin-sky: #04a5e5;
+  --catppuccin-sapphire: #209fb5;
+  --catppuccin-blue: #1e66f5;
+  --catppuccin-lavender: #7287fd;
+  --catppuccin-text: #4c4f69;
+  --catppuccin-subtext1: #5c5f77;
+  --catppuccin-subtext0: #6c6f85;
+  --catppuccin-overlay2: #7c7f93;
+  --catppuccin-overlay1: #8c8fa1;
+  --catppuccin-overlay0: #9ca0b0;
+  --catppuccin-surface2: #acb0be;
+  --catppuccin-surface1: #bcc0cc;
+  --catppuccin-surface0: #ccd0da;
+  --catppuccin-base: #eff1f5;
+  --catppuccin-mantle: #e6e9ef;
+  --catppuccin-crust: #dce0e8;
+
+  --background: var(--catppuccin-base);
+  --accent-color: var(--catppuccin-lavender);
+
+  /* Text */
+  --text-color: var(--catppuccin-text);
+  --text-color-secondary: var(--catppuccin-subtext0);
+
+  /* Breadcrumbs - Deprecated */
+  --breadcrumbs-bar-background: var(--background);
+
+  /* Tabs - Deprecated */
+  --tabs-item-background--selected: var(--card-background);
+
+  /* Table */
+  --table-background: color-mix(in srgb, var(--background) 95%, var(--text-color-secondary));
+  --table-body-background: var(--card-background);
+
+  /* Side panel */
+  --panel-border-color: color-mix(in srgb, var(--text-color-secondary) 15%, var(--card-background));
+
+  /* Form */
+  --input-color: color-mix(in srgb, var(--text-color-secondary) 3%, var(--background));
+  --input-border: color-mix(in srgb, var(--text-color-secondary) 30%, var(--background));
+  --input-border-hover: color-mix(in srgb, var(--text-color-secondary) 40%, var(--background));
+
+  /* Default button */
+  --button-background: oklch(from var(--text-color-secondary) l c h / 0.075);
+  --button-background--hover: oklch(
+      from var(--text-color-secondary) l c h / 0.125
+  );
+  --button-background--active: oklch(
+      from var(--text-color-secondary) l c h / 0.175
+  );
+  --button-box-shadow--focus: oklch(
+      from var(--text-color-secondary) l c h / 0.1
+  );
+
+  /* Variables for sidebar items, card items */
+  --item-background--hover: oklch(from var(--text-color-secondary) l c h / 0.1);
+  --item-background--active: oklch(
+      from var(--text-color-secondary) l c h / 0.15
+  );
+  --item-box-shadow--focus: oklch(from var(--text-color-secondary) l c h / 0.1);
+
+  /* Card */
+  --card-background: color-mix(in srgb, var(--background) 95%, white);
+  --card-border-color: var(--prefers-contrast, color-mix(in srgb, var(--text-color-secondary) 10%, var(--card-background)));
+
+  @media (prefers-contrast: more) {
+    --prefers-contrast: var(--text-color);
+  }
+
+  /* This should be removed when core usees '--card-border-color' for tabs */
+  .tabBar {
+    &::before {
+      border: var(--jenkins-border-width) solid var(--card-border-color);
+    }
+  }
+
+  /* This should be removed when core usees '--card-border-color' for tables */
+  .jenkins-table {
+    @supports (not (-moz-appearance: none)) {
+      &::before {
+        border: var(--jenkins-border-width) solid var(--card-border-color);
+      }
+    }
+  }
+
+  /* Colors */
+  /* Base palette to match background and accent-color theme */
+  --red: var(--catppuccin-red);
+  --orange: var(--catppuccin-peach);
+  --yellow: var(--catppuccin-yellow);
+  --green: var(--catppuccin-green);
+  --blue: var(--catppuccin-blue);
+  --cyan: var(--catppuccin-sky);
+  --teal: var(--catppuccin-teal);
+  --indigo: var(--catppuccin-mauve);
+  --purple: var(--catppuccin-lavender);
+  --pink: var(--catppuccin-pink);
+  --brown: var(--catppuccin-rosewater);
+
+  /* Derived variants (light/dark) */
+  --light-red: oklch(from var(--red) calc(l + 0.2) c h);
+  --dark-red: oklch(from var(--red) calc(l - 0.2) c h);
+  --light-orange: oklch(from var(--orange) calc(l + 0.2) c h);
+  --dark-orange: oklch(from var(--orange) calc(l - 0.2) c h);
+  --light-yellow: oklch(from var(--yellow) calc(l + 0.2) c h);
+  --dark-yellow: oklch(from var(--yellow) calc(l - 0.2) c h);
+  --light-green: oklch(from var(--green) calc(l + 0.2) c h);
+  --dark-green: oklch(from var(--green) calc(l - 0.2) c h);
+  --light-blue: oklch(from var(--blue) calc(l + 0.2) c h);
+  --dark-blue: oklch(from var(--blue) calc(l - 0.2) c h);
+  --light-cyan: oklch(from var(--cyan) calc(l + 0.2) c h);
+  --dark-cyan: oklch(from var(--cyan) calc(l - 0.2) c h);
+  --light-teal: oklch(from var(--teal) calc(l + 0.2) c h);
+  --dark-teal: oklch(from var(--teal) calc(l - 0.2) c h);
+  --light-indigo: oklch(from var(--indigo) calc(l + 0.2) c h);
+  --dark-indigo: oklch(from var(--indigo) calc(l - 0.2) c h);
+  --light-purple: oklch(from var(--purple) calc(l + 0.2) c h);
+  --dark-purple: oklch(from var(--purple) calc(l - 0.2) c h);
+  --light-pink: oklch(from var(--pink) calc(l + 0.2) c h);
+  --dark-pink: oklch(from var(--pink) calc(l - 0.2) c h);
+  --light-brown: oklch(from var(--brown) calc(l + 0.2) c h);
+  --dark-brown: oklch(from var(--brown) calc(l - 0.2) c h);
+
+  /* Render native browser elements in light mode */
+  color-scheme: light;
+}
