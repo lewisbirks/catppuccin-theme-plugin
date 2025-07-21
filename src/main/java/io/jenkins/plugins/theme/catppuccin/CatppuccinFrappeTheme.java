@@ -46,7 +46,7 @@ public class CatppuccinFrappeTheme extends ThemeManagerFactory {
         @NonNull
         @Override
         public String getDisplayName() {
-            return "Catppuccin Frappe";
+            return "Catppuccin Frappé";
         }
     }
 }

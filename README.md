@@ -13,7 +13,7 @@ This plugin provides the Catppuccin themes for Jenkins.
 
 ## Usage
 
-After installing this plugin, go to _Manage Jenkins » Appearance » Themes_ and select one of the _latte_, _frappe_, _macchiato_, _mocha_ themes.
+After installing this plugin, go to _Manage Jenkins » Appearance » Themes_ and select one of the _Latte_, _Frappé_, _Macchiato_, _Mocha_ themes.
 
 ## Contributing
 
